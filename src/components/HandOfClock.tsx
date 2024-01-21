@@ -7,7 +7,7 @@ interface HandOfClockProps {
 function HandOfClock({ kind }: HandOfClockProps, ref: Ref<HTMLDivElement>) {
   const styles = {
     second: "w-[4px] h-[100px] bg-red-500",
-    minute: "w-[6px] h-[80px] bg-gray-700",
+    minute: "w-[6px] h-[80px] bg-gray-600",
     hour: "w-[6px] h-[50px] bg-black",
   };
   return (
