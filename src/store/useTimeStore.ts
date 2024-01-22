@@ -56,9 +56,9 @@ export const useTimeStore = create<TimeState>()(
         produce((state) => {
           const { hours, minutes, seconds } = state.time;
           state.degree = {
-            hours: (hours / 12) * 360 + (minutes / 60) * 30 + 90,
-            minutes: (minutes / 60) * 360 + (seconds / 60) * 6 + 90,
-            seconds: (seconds / 60) * 360 + 90,
+            hours: (hours / 12) * 360 + (minutes / 60) * 30,
+            minutes: (minutes / 60) * 360 + (seconds / 60) * 6,
+            seconds: (seconds / 60) * 360,
           };
         })
       );
