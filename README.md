@@ -1,7 +1,8 @@
 # analog-clock
 
 아날로그 시계로 시계에 마우스 오버시 정확한 시간이 툴팁으로 나타납니다.
-![아날로그시계](https://github.com/Seulji-jo/analog-clock/assets/70743542/aeb7ef6a-d6dd-4738-88ab-f94d570fc1b9)
+![아날로그시계](https://github.com/Seulji-jo/analog-clock/assets/70743542/34dff1c2-af23-4b8b-923d-5e0372c4bc8a)
+
 
 ## Project Stack
 
