@@ -9,28 +9,17 @@ interface TimeState {
     minutes: number;
     seconds: number;
   };
-  degree: {
-    hours: number;
-    minutes: number;
-    seconds: number;
-  };
   setDate: () => void;
   setTime: () => void;
-  setDegree: () => void;
 }
 
 export const useTimeStore = create<TimeState>()(
-  immer((set, get) => ({
+  immer((set) => ({
     date: new Date(),
     time: {
       hours: new Date().getHours(),
       minutes: new Date().getMinutes(),
       seconds: new Date().getSeconds(),
-    },
-    degree: {
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
     },
     setDate: () => {
       set(
@@ -43,21 +32,9 @@ export const useTimeStore = create<TimeState>()(
       set(
         produce((state) => {
           state.time = {
-            hours: state.date.getHours(),
-            minutes: state.date.getMinutes(),
-            seconds: state.date.getSeconds(),
-          };
-        })
-      );
-    },
-    setDegree: () => {
-      set(
-        produce((state) => {
-          const { hours, minutes, seconds } = state.time;
-          state.degree = {
-            hours: (hours / 12) * 360 + (minutes / 60) * 30,
-            minutes: (minutes / 60) * 360 + (seconds / 60) * 6,
-            seconds: (seconds / 60) * 360,
+            hours: new Date().getHours(),
+            minutes: new Date().getMinutes(),
+            seconds: new Date().getSeconds(),
           };
         })
       );

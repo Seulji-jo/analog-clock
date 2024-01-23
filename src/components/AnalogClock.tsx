@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import HandOfClock from "./HandOfClock";
 import { useTimeStore } from "../store/useTimeStore";
 
@@ -7,7 +7,8 @@ function AnalogClock() {
   const minuteHandRef = useRef<HTMLDivElement>(null);
   const secondHandRef = useRef<HTMLDivElement>(null);
 
-  const { date, time, degree, setDate, setTime, setDegree } = useTimeStore();
+  const { date, time, setDate, setTime } = useTimeStore();
+  const [degree, setDegree] = useState({ hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const currentDate = setInterval(setDate, 1000);
@@ -16,8 +17,13 @@ function AnalogClock() {
   }, [date, setDate, setTime]);
 
   useEffect(() => {
-    setDegree();
-  }, [time, setDegree]);
+    const { hours, minutes, seconds } = time;
+    setDegree({
+      hours: (hours / 12) * 360 + (minutes / 60) * 30,
+      minutes: (minutes / 60) * 360 + (seconds / 60) * 6,
+      seconds: (seconds / 60) * 360,
+    });
+  }, [time]);
 
   useEffect(() => {
     if (hourHandRef.current) {
