@@ -3,7 +3,7 @@
 아날로그 시계로 시계에 마우스 오버시 정확한 시간이 툴팁으로 나타납니다.
 ![아날로그시계](https://github.com/Seulji-jo/analog-clock/assets/70743542/aeb7ef6a-d6dd-4738-88ab-f94d570fc1b9)
 
-### Project Stack
+## Project Stack
 
 Following items are core frontend technologies used in this project:
 
@@ -12,7 +12,7 @@ Following items are core frontend technologies used in this project:
 - Immer
 - Tailwind CSS
 
-### What it does
+## What it does
 
 해당페이지의 아날로그 시계는 현재 지역의 시간을 실시간으로 보여줍니다.
 
@@ -20,7 +20,7 @@ Following items are core frontend technologies used in this project:
 - 시계에 마우스 오버시 현재 시간을 툴팁으로 표시했습니다.
   - 툴팁은 마우스 커서 우상단에 위치하며 마우스 움직임에 따라 같이 움직입니다.
 
-### How it works
+## How it works
 
 <img width="1174" alt="스크린샷 2024-01-23 오후 9 15 35" src="https://github.com/Seulji-jo/analog-clock/assets/70743542/84957321-5572-4449-9424-3fa76375a1c7">
 SPA framework로는 React.ts, Statement magement 라이브러리로는 zustand를 사용해 개발했습니다.
@@ -31,7 +31,7 @@ SPA framework로는 React.ts, Statement magement 라이브러리로는 zustand�
   - AnalogClock 컴포넌트에서 zustand action함수인 setDate와 setTime으로 1초씩 새 값이 할당되게하여 해당 time이 바뀔때마다 degree값을 계산해 시침, 분침, 초침이 변경될 수 있도록 개발했습니다.
 - 툴팁 컴포넌트는 자식을 프로퍼티로 받은 후 감싸 마우스오버 이벤트가 실행되게 설정했고, 툴팁 박스는 analog clock의 자식 컴포넌트이지만 독립적인 구조로 렌더링되게 createPortal을 사용했다.
 
-### How to install & run locally
+## How to install & run locally
 
 1. Clone the repo
 
