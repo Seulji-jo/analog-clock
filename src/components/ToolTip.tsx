@@ -1,6 +1,7 @@
 import { MouseEvent, ReactNode, useEffect, useRef, useState } from "react";
 import { useTimeStore } from "../store/useTimeStore";
 import Portal from "./Portal";
+import { twoDigitTimeForm } from "../libs/formatOfTime";
 
 interface ToolTipProps {
   children: ReactNode;
@@ -48,7 +49,8 @@ function Tooltip({ children }: ToolTipProps) {
             ref={tooltipRef}
             className={`min-w-[100px] absolute px-[16px] py-[8px] bg-black bg-opacity-70 rounded-[8px] text-white text-xs font-semibold`}
           >
-            {hours}:{minutes}:{seconds}
+            {twoDigitTimeForm(hours)}:{twoDigitTimeForm(minutes)}:
+            {twoDigitTimeForm(seconds)}
           </div>
         )}
       </Portal>
